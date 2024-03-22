@@ -15,6 +15,7 @@ function ProfileForm() {
     email: '',
     phone: ''
   }); // Estado para almacenar los datos editados del usuario
+  const [currentGroup, setCurrentGroup] = useState(0); 
 
   const handlePhotoChange = (event) => {
     const selectedPhoto = event.target.files[0];
@@ -104,7 +105,22 @@ function ProfileForm() {
         console.error('Error al actualizar el usuario:', error);
       });
   };
+  const handleNextGroup = () => {
+    setCurrentGroup((prevGroup) => prevGroup + 1);
+  };
 
+  // Función para retroceder al grupo anterior de grúas
+  const handlePrevGroup = () => {
+    setCurrentGroup((prevGroup) => prevGroup - 1);
+  };
+
+  const groupCranesVertically = () => {
+    const groups = [];
+    for (let i = 0; i < userCranes.length; i += 3) {
+      groups.push(userCranes.slice(i, i + 3));
+    }
+    return groups;
+  };
   return (
     <section className='section-perfil'>
       <div className="profile-editor">
@@ -112,7 +128,7 @@ function ProfileForm() {
           <div className="tituloEditar">
             <h2>Editar perfil</h2>
           </div>
-
+  
           <div className="containerFotoProfile">
             <img className="profile-photo" src={photo} alt="Perfil" />
             <div className="option-cambiar">
@@ -120,21 +136,21 @@ function ProfileForm() {
               <input className='input-cambiar' type="file" name="photo" id="photo" onChange={handlePhotoChange} />
             </div>
           </div>
-
+  
           <div className="infoProfile">
             <div className="form-group">
               <label className='labelUser' htmlFor="user">Usuario:</label>
               <input
-                className={`input-user ${editingUser ? 'editable' : ''}`} // Agregar la clase 'editable' cuando se está editando
+                className={`input-user ${editingUser ? 'editable' : ''}`}
                 type="text"
                 name="user"
                 id="user"
-                value={editingUser ? editedUserData.user : user?.user ?? "undefined"} // Usar editedUserData si está en modo de edición
-                readOnly={!editingUser} // Hacer el campo de solo lectura cuando no se está editando
-                onChange={handleEditedUserDataChange} // Capturar los cambios durante la edición
+                value={editingUser ? editedUserData.user : user?.user ?? "undefined"}
+                readOnly={!editingUser}
+                onChange={handleEditedUserDataChange}
               />
             </div>
-
+  
             <div className="form-group">
               <label className='labelPhone' htmlFor="phone">Teléfono:</label>
               <input
@@ -147,7 +163,7 @@ function ProfileForm() {
                 onChange={handleEditedUserDataChange}
               />
             </div>
-
+  
             <div className="form-group">
               <label className='labelCorreo' htmlFor="email">Correo-e:</label>
               <input
@@ -159,72 +175,77 @@ function ProfileForm() {
                 onChange={handleEditedUserDataChange}
               />
             </div>
-
-            {/* Botón para editar el usuario */}
-            <button onClick={editingUser ? handleSubmitEditUser : handleEditUser}>
+  
+            <button className='butonEditarprofile' onClick={editingUser ? handleSubmitEditUser : handleEditUser}>
               {editingUser ? 'Guardar Cambios' : 'Editar Usuario'}
             </button>
           </div>
         </div>
-
+  
         <div className="user-cranes">
-          <h3>Grúas Publicadas:</h3>
-          <div className="gruas-list">
-            {userCranes.map((grua, index) => (
-              <div key={index} className="grua-card">
-                <input
-                  className='input-marca'
-                  type="text"
-                  name="marca"
-                  value={grua.marca}
-                  onChange={(
-                    event) => handleGruaChange(event, index)}
-                    />
-                    <input
-                      className='input-modelo'
-                      type="text"
-                      name="modelo"
-                      value={grua.modelo}
-                      onChange={(event) => handleGruaChange(event, index)}
-                    />
-                    <input
-                      className='input-capacidad'
-                      type="number"
-                      name="capacidad"
-                      value={grua.capacidad}
-                      onChange={(event) => handleGruaChange(event, index)}
-                    />
-                    <input
-                      className='input-whatsapp'
-                      type="text"
-                      name="whatsapp"
-                      value={grua.whatsapp}
-                      onChange={(event) => handleGruaChange(event, index)}
-                    />
-                    <input
-                      className='input-ubicacion'
-                      type="text"
-                      name="ubicacion"
-                      value={grua.ubicacion}
-                      onChange={(event) => handleGruaChange(event, index)}
-                    />
-                    <button onClick={() => handleDeleteGrua(grua.id)}>Eliminar</button>
-                    <button onClick={() => handleEditGrua(grua.id, {
-                      marca: grua.marca,
-                      modelo: grua.modelo,
-                      capacidad: grua.capacidad,
-                      whatsapp: grua.whatsapp,
-                      ubicacion: grua.ubicacion,
-                      foto_path: grua.foto_path
-                    })}>Editar</button>
-                  </div>
-                ))}
-              </div>
+        <div className="tituloGruasP"> 
+        <h3>Grúas Publicadas:</h3>
+        </div>
+        <div className="gruas-list">
+          {userCranes.slice(currentGroup * 3, (currentGroup + 1) * 3).map((grua, index) => (
+            <div key={index} className="grua-card">
+              <input
+                className='input-marca'
+                type="text"
+                name="marca"
+                value={grua.marca}
+                onChange={(event) => handleGruaChange(event, index)}
+              />
+              <input
+                className='input-modelo'
+                type="text"
+                name="modelo"
+                value={grua.modelo}
+                onChange={(event) => handleGruaChange(event, index)}
+              />
+              <input
+                className='input-capacidad'
+                type="number"
+                name="capacidad"
+                value={grua.capacidad}
+                onChange={(event) => handleGruaChange(event, index)}
+              />
+              <input
+                className='input-whatsapp'
+                type="text"
+                name="whatsapp"
+                value={grua.whatsapp}
+                onChange={(event) => handleGruaChange(event, index)}
+              />
+              <input
+                className='input-ubicacion'
+                type="text"
+                name="ubicacion"
+                value={grua.ubicacion}
+                onChange={(event) => handleGruaChange(event, index)}
+              />
+              <div className="botonesperfil">
+
+              <button className='butonEliminar' onClick={() => handleDeleteGrua(grua.id)}>Eliminar</button>
+              <button className='butonEditar' onClick={() => handleEditGrua(grua.id, {
+                marca: grua.marca,
+                modelo: grua.modelo,
+                capacidad: grua.capacidad,
+                whatsapp: grua.whatsapp,
+                ubicacion: grua.ubicacion,
+                foto_path: grua.foto_path
+              })}>Editar</button>
             </div>
-          </div>
-        </section>
-      );
-    }
-    
-    export default ProfileForm;
-    
+            </div>
+          ))}
+        <div className="navigation-arrows">
+          <button className='butonAnterior' disabled={currentGroup === 0} onClick={handlePrevGroup}>Anterior</button>
+          <button className='butonSiguiente' disabled={(currentGroup + 1) * 3 >= userCranes.length} onClick={handleNextGroup}>Siguiente</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+              } 
+export default ProfileForm;
