@@ -28,7 +28,6 @@ export default function Header() {
         <NavLink to="/">
           <h1>
             Gruapp
-            <hr className='hr1' />
           </h1>
         </NavLink>
       </div>

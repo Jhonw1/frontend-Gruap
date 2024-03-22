@@ -167,3 +167,47 @@ input[type="file"] {
   width: 40%;
   color: black;
 }
+
+
+/* Perfil.css */
+
+.grua-card {
+  background-color: #1F2124;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  color: white;
+  margin: 20px;
+  width: 350px; /* Ajusta el ancho según tus necesidades */
+  transition: transform 0.3s ease;
+}
+
+.grua-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 5px 4px #1F2124;
+}
+
+.grua-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.tituloGruas {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.grua-info {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+
+
+
+
