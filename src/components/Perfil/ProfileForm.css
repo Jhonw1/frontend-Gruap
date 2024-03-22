@@ -1,13 +1,14 @@
 
 .profile-editor {
   width: 70%;
-  height: 90vh;
+  height: 100vh;
   /* padding: 20px; */
   border: 1px solid #424242;
   border-radius: 4px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: white;
   background-color: #999999;
+  border-radius: 20px;
  
   font-family: 'Arial', sans-serif;
 }
@@ -19,9 +20,10 @@
 }
 .profile-photo {
   border-radius: 50%;
-  width: 100px; /* Ajusta el tamaño según sea necesario */
-  height: 100px; /* Ajusta el tamaño según sea necesario */
+  width: 150px; /* Ajusta el tamaño según sea necesario */
+  height: 150px; /* Ajusta el tamaño según sea necesario */
   object-fit: cover; /* Para mantener la relación de aspecto */
+
 }
 .botonProfile{
   
@@ -53,7 +55,7 @@
   border: solid 2px black;
   width: 80%;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
-  margin-left: 20px;
+  margin-left: 35px;
 
 }
 .infoProfile{
@@ -78,6 +80,7 @@
   font-family: "Oswald", sans-serif;
   font-weight: 700;
   color: black;
+  font-size: 25px;
 }
 .input-cambiar{
   display: none;
@@ -99,6 +102,11 @@
   cursor: pointer;
   /* display: block; */
   margin-top: 30px;
+  border: solid 2px black;
+  box-shadow: 0px 3px 4px black;
+}
+.option-cambiar label:hover{
+  background-color: #ff0202;
 }
 
 
@@ -133,13 +141,13 @@ background-color: black;  height: 130vh;
 }
 
 .input-user{
- width: 67%;
+ width: 80%;
  background-color: #999999;
  border:none;
  color: black;
 }
 .labelUser{
-  width: 30%;
+  width: 17%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,11 +161,11 @@ background-color: black;  height: 130vh;
   color: black;
 }
 .labelCorreo{
-  width: 45%;
+  width: 30%;
   color: black;
 }
 .input-phoneNumber{
-  width: 85%;
+  width: 130%;
   background-color: #999999;
   border: none;
   color: black;
@@ -225,6 +233,7 @@ background-color: black;  height: 130vh;
   flex-direction: column-reverse;
   align-items: center;
   background-color: #999999;
+  border-radius: 20px;
 }
 .tituloGruasP{
   grid-row: 1/2;
@@ -243,12 +252,57 @@ background-color: black;  height: 130vh;
   align-items: center;
   justify-content: space-between;
   border-radius: 20px 0 0 20px;
+  margin-bottom: 20px;
 }
-.butonAnterion{
+.butonAnterior{
   border-radius: 20px 0 0 20px;
+  background-color: black;
+  color: white;
+  box-shadow: 0px 4px 7px black;
 
 }
+.butonAnterior:hover{
+  background-color: #1F2124;
+}
+
 .butonSiguiente{
   border-radius: 0px 20px 20px 0px;
+  background-color: black;
+  color: white;
+  box-shadow: 0px 4px 7px black;
+  
+}
+.butonSiguiente:hover{
+  background-color: #1F2124;
+}
 
+.butonEliminar{
+  background-color: #d41c1c;
+  width: 40%;
+}
+.butonEditar{
+  background-color: rgb(70, 235, 180);
+  width: 40%;
+}
+.botonesperfil{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.butonEditarprofile{
+  background-color: #d41c1c;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 25%;
+  border: solid 2px;
+  color: black;
+  border-radius: 10px;
+  border: solid 2px black;
+  box-shadow: 0px 3px 4px black;
+}
+.butonEditarprofile:hover{
+  background-color: #ff0202;
 }

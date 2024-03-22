@@ -176,7 +176,7 @@ function ProfileForm() {
               />
             </div>
   
-            <button onClick={editingUser ? handleSubmitEditUser : handleEditUser}>
+            <button className='butonEditarprofile' onClick={editingUser ? handleSubmitEditUser : handleEditUser}>
               {editingUser ? 'Guardar Cambios' : 'Editar Usuario'}
             </button>
           </div>
@@ -224,8 +224,10 @@ function ProfileForm() {
                 value={grua.ubicacion}
                 onChange={(event) => handleGruaChange(event, index)}
               />
-              <button onClick={() => handleDeleteGrua(grua.id)}>Eliminar</button>
-              <button onClick={() => handleEditGrua(grua.id, {
+              <div className="botonesperfil">
+
+              <button className='butonEliminar' onClick={() => handleDeleteGrua(grua.id)}>Eliminar</button>
+              <button className='butonEditar' onClick={() => handleEditGrua(grua.id, {
                 marca: grua.marca,
                 modelo: grua.modelo,
                 capacidad: grua.capacidad,
@@ -234,9 +236,10 @@ function ProfileForm() {
                 foto_path: grua.foto_path
               })}>Editar</button>
             </div>
+            </div>
           ))}
         <div className="navigation-arrows">
-          <button className='butonAnterion' disabled={currentGroup === 0} onClick={handlePrevGroup}>Anterior</button>
+          <button className='butonAnterior' disabled={currentGroup === 0} onClick={handlePrevGroup}>Anterior</button>
           <button className='butonSiguiente' disabled={(currentGroup + 1) * 3 >= userCranes.length} onClick={handleNextGroup}>Siguiente</button>
         </div>
         </div>
