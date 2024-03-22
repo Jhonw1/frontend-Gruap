@@ -1,66 +1,117 @@
-/* Login.css */
 
 .login-container {
-    background-color: #333;
-    color: #fff;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(45deg, #7c7d7e, #000000, #444444, #7d7d7e);
-  }
-  
-  .login-form {
-    width: 21%;
-    padding: 20px;
-    border: 1px solid #555;
-    border-radius: 8px;
-    border: 1px solid #e30a13;
-    border-radius: 12px;
-    box-shadow: 0 0 15px rgba(255, 57, 57, 0.8);
-    background-color: #282828;
-    transition: transform 0.3s ease-in-out;
-    background: linear-gradient(45deg, #7c7d7e, #000000, #444444, #6b6b6b);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-  }
-  
+  background-color: #333;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #7c7d7e, #000000, #444444, #7d7d7e);
+}
+
+/* Formulario de login */
+.login-form {
+  width: 21%;
+  padding: 20px;
+  border: 1px solid #555;
+  border-radius: 8px;
+  border: 1px solid #e30a13;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 57, 57, 0.8);
+  background-color: #282828;
+  transition: transform 0.3s ease-in-out;
+  background: linear-gradient(45deg, #7c7d7e, #000000, #444444, #6b6b6b);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+/* Título del formulario */
 .iniciar {
-    color: #ffffff;
-    text-align: center;
-  }
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 30PX;
+}
+
+/* Etiqueta del campo */
+.label-login {
+  margin-top: 15px;
+  font-size: 18px;
+  color: white;
   
-  .label-login {
-    margin-top: 15px;
-    font-size: 18px;
-    color: white;
+}
+
+/* Campo de entrada */
+.input-login {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  background-color: #505050;
+  color: #fff;
+  border: 1px solid #e30a13;
+}
+
+/* Botón de envío */
+button {
+  margin-top: 20px;
+  background-color: #ffffff;
+  color: #fff;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Estilo al pasar el ratón sobre el botón */
+button:hover {
+  background-color: #ffffff;
+}
+
+/* Animación del fondo */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .input-login{
-    width: 100%;
-    padding: 10px;
-    margin-top: 4px;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
-    background-color: #505050; 
-    color: #fff; 
-    border: 1px solid #e30a13; 
+  50% {
+    background-position: 100% 50%;
   }
-  
-  button {
-    margin-top: 20px;
-    background-color: #ffffff;
-    color: #fff;
-    padding: 15px;
-    font-size: 18px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease-in-out;
+  100% {
+    background-position: 0% 50%;
   }
-  
-  button:hover {
-    background-color: #ffffff;
-  }
-  
+}
+
+/* Media queries para ajustar el diseño en diferentes tamaños de pantalla */
+
+/* Móvil pequeño */
+@media (max-width: 360px) {
+  /* Eliminar la regla de ancho para mantener el tamaño original */
+}
+
+/* Ordenador portátil medio */
+@media (max-width: 1366px) {
+  /* Eliminar la regla de ancho para mantener el tamaño original */
+}
+
+/* Escritorio grande */
+@media (max-width: 1920px) {
+  /* Eliminar la regla de ancho para mantener el tamaño original */
+}
+
+/* Móvil medio */
+@media (max-width: 375px) {
+  /* Eliminar la regla de ancho para mantener el tamaño original */
+}
+
+/* Escritorio medio */
+@media (max-width: 1440px) {
+  /* Eliminar la regla de ancho para mantener el tamaño original */
+}
+
+/* Móvil grande */
+@media (max-width: 720px) {
+  /* Eliminar la regla de ancho para mantener el tamaño original */
+}

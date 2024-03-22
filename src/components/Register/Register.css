@@ -1,87 +1,132 @@
+/* Estilos originales */
+
+/* Contenedor principal */
 .registro-container {
-    background-color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: linear-gradient(45deg, #7c7d7e, #000000, #444444, #7d7d7e);
-  }
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(45deg, #7c7d7e, #000000, #444444, #7d7d7e);
+}
 
+/* Formulario de registro */
+.registro-form {
+  max-width: 450px;
+  padding: 30px;
+  border: 2px solid #e30a13;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 57, 57, 0.8);
+  background-color: #282828;
+  transition: transform 0.3s ease-in-out;
+  background: linear-gradient(45deg, #7c7d7e, #000000, #444444, #6b6b6b);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+/* Título del formulario */
+.tituloRegister {
+  text-align: center;
+  color: #ffffff;
+  -webkit-text-stroke: 0.3px black;
+  font-size: 25px;
+}
+
+/* Etiqueta del campo */
+.label-register {
+  display: block;
+  margin: 15px 0;
+  color: #fff;
+}
+
+/* Campo de entrada */
+.input-register {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  background-color: #505050;
+  color: #fff;
+  border: 1px solid #ff0000;
+}
+
+/* Estilo al enfocar el campo de entrada */
+input:focus {
+  border-color: #ff0008;
+}
+
+/* Botón de envío */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffffff;
+  color: #282828;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+/* Estilo al pasar el ratón sobre el botón */
+button:hover {
+  background-color: #d1ffe6;
+}
+
+/* Animación del fondo */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Media queries para ajustar el diseño en diferentes tamaños de pantalla */
+
+/* Móvil pequeño */
+@media (max-width: 360px) {
   .registro-form {
-    max-width: 450px;
-    padding: 30px;
-    border: 2px solid #e30a13;
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(255, 57, 57, 0.8);
-    background-color: #282828;
-    transition: transform 0.3s ease-in-out;
-    background: linear-gradient(45deg, #7c7d7e, #000000, #444444, #6b6b6b);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
+    max-width: 90%;
   }
-  
-  .registro-form:hover {
-    transform: scale(1.05);
-  }
-  
-  .tituloRegister {
-    text-align: center;
-    color: #ffffff;
-    -webkit-text-stroke: 0.3px black; 
-    font-size: 25px; 
-  }
-  
-  .label-register {
-    display: block;
-    margin: 15px 0; 
-    color: #fff; 
-  }
-  
-  .input-register {
-    width: 100%;
-    padding: 10px;
-    margin-top: 4px;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
-    background-color: #505050; 
-    color: #fff; 
-    border: 1px solid #ff0000; 
-  }
-  
-  input:focus {
-    border-color: #ff0008;
-  }
-  
-  button {
-    width: 100%;
-    padding: 12px;
-    background-color: #ffffff; 
-    color: #282828; 
-    border: none;
-    border-radius: 6px; 
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-weight: bold; 
-  }
-  
-  button:hover {
-    background-color: #d1ffe6; 
-  }
-  
-  
-  @keyframes gradientAnimation {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
+}
 
-  
+/* Ordenador portátil medio */
+@media (max-width: 1366px) {
+  .registro-form {
+    max-width: 70%;
+  }
+}
 
-  
+/* Escritorio grande */
+@media (max-width: 1920px) {
+  .registro-form {
+    max-width: 50%;
+  }
+}
+
+/* Móvil medio */
+@media (max-width: 375px) {
+  .registro-form {
+    max-width: 80%;
+  }
+}
+
+/* Escritorio medio */
+@media (max-width: 1440px) {
+  .registro-form {
+    max-width: 60%;
+  }
+}
+
+/* Móvil grande */
+@media (max-width: 720px) {
+  .registro-form {
+    max-width: 75%;
+  }
+}

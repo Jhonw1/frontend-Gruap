@@ -23,11 +23,6 @@
   background-color: black;
 }
 
-.hr1 {
-  width: 100%;
-  color: white;
-}
-
 .logo {
   margin-left: 10%;
 }
@@ -35,8 +30,9 @@
 .logo h1 {
   color: #e30a13;
   font-size: 40px;
-  text-decoration: underline white  ;
+  text-decoration: underline white;
 }
+
 a:-webkit-any-link {
   color: white;
   cursor: pointer;
@@ -101,12 +97,9 @@ ul {
   font-size: 18px;
 }
 
-
-
 .rayasHorizontales:hover .menuVertical {
   display: block;
   border: none; /* Agrega esta línea para quitar el borde */
-
 }
 
 .menuVertical li:hover {
@@ -170,4 +163,110 @@ ul {
 
 .opciones {
   margin-top: 5px;
+}
+
+
+/* Estilos para el enlace de registro */
+.register {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background: linear-gradient(45deg, #f20c0c, #f20c0c);
+  color: white;
+  text-decoration: none;
+  transition: transform 0.2s;
+  margin-right: 10px; /* Agregamos un margen a la derecha */
+}
+
+.register:hover {
+  transform: translateY(-3px);
+}
+
+/* Estilos para el enlace de login */
+.login {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  position: relative;
+}
+
+.login:hover::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid red; /* Cambia el color del borde a rojo */
+  border-radius: 5px;
+  z-index: -1; /* Colocamos por debajo del texto */
+  transition: border-color 0.3s;
+}
+
+.login:hover {
+  color: #fff; /* Cambiamos el color del texto al pasar el ratón a blanco */
+}
+
+
+.logo {
+  flex: 1;
+  margin-right: 20px;
+}
+
+
+.navbar {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
+.navbar a {
+  color: white;
+  margin-left: 30px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 1.6s;
+}
+
+.navbar a:hover {
+  border-color: #e30a13;
+}
+
+/* Media queries para ajustes responsivos */
+
+/* Pantallas pequeñas */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
+
+  .navbar a {
+    margin: 0 10px;
+  }
+}
+
+/* Pantallas extra pequeñas */
+@media (max-width: 360px) {
+  .header {
+    padding: 10px;
+  }
+
+  .navbar a {
+    padding: 8px 12px;
+    font-size: 14px;
+    margin: 0 5px;
+  }
 }

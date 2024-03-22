@@ -1,52 +1,99 @@
 /* Contacto.css */
 
 .contact-container {
-    max-width: 500px;
-    margin: auto;
-    padding: 30px;
-    border: 1px solid #e30a13;
-    border-radius: 12px;
-    box-shadow: 0 0 7px rgba(255, 57, 57, 0.8);
-    background-color: #333;
-    margin-top: 10%;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color: #282828;
-    transition: transform 0.3s ease-in-out;
-    background: linear-gradient(45deg, #959596, #000000, #616060, #6b6b6b);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-  }
-  
-  .tituloContacto {
-    color: #ffffff;
-    text-align: center;
-  }
-  
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .letra {
-    margin-top: 15px;
-    font-size: 17px;
-    color: #ffffff;
-  }
-  
-  
-  .buttoncontac {
-    margin-top: 20px;
+  max-width: 500px;
+  margin: auto;
+  padding: 30px;
+  border: 1px solid #e30a13;
+  border-radius: 12px;
+  box-shadow: 0 0 7px rgba(255, 57, 57, 0.8);
+  background-color: #333;
+  margin-top: 10%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  background-color: #282828;
+  transition: transform 0.3s ease-in-out;
+  background: linear-gradient(45deg, #959596, #000000, #616060, #6b6b6b);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+
+textarea {
+  resize: none; 
+  height: 100px; 
+  width: 100%; 
+}
+
+
+[type="text"],
+[type="email"] {
+  width: calc(100% - 26px); 
+  padding: 8px; 
+  margin-top: 8px; 
+  margin-bottom: 8px; 
+}
+
+
+.tituloContacto {
+  color: #ffffff;
+  text-align: center;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.letra {
+  margin-top: 15px;
+  font-size: 17px;
+  color: #ffffff;
+}
+
+.buttoncontac {
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  color: black;
+  cursor: pointer;
+  background-color: whitesmoke;
+}
+
+.buttoncontac:hover {
+  background-color:#d1ffe6;
+}
+
+
+
+@media (max-width: 768px) {
+  .contact-container {
     padding: 15px;
-    font-size: 18px;
-    border: none;
-    border-radius: 6px;
-    color: black;
-    cursor: pointer;
-    background-color: whitesmoke;
-  }
-  
-  .buttoncontac:hover {
-    background-color:#d1ffe6;
   }
 
- 
+  .letra {
+    font-size: 14px;
+  }
+
+  .buttoncontac {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-container {
+    margin-top: 20%;
+    max-width: 90%;
+  }
+
+  .letra {
+    font-size: 12px;
+  }
+
+  .buttoncontac {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
